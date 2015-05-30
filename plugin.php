@@ -16,7 +16,6 @@
 
 	add_action('wp_dashboard_setup', 'wp_cfc_add_dashboard_widgets');
 
-
 	function wp_cfc_scheduled_post_widget_function() {
 		global $wpdb;
 
@@ -25,18 +24,15 @@
 		echo '<div class="activity-block">';
 		foreach($result as $sc_post)
 		{
-			echo '<ul>
-				     	<li>
-				     		<span><strong>'. ucwords($sc_post->post_status) .'</strong> :</span>
-					     	<span>'.get_date_from_gmt($sc_post->post_date_gmt, $format = 'Y-m-d H:i').' : </span>
-			                <a href="'.get_edit_post_link($sc_post->ID).'">'.$sc_post->post_title.'</a>
-						</li>
-				  </ul>';
+			echo '<ul><li>
+				<span><strong>'. ucwords($sc_post->post_status) .'</strong> :</span>
+				<span>'.get_date_from_gmt($sc_post->post_date_gmt, $format = 'Y-m-d H:i').' : </span>
+			        <a href="'.get_edit_post_link($sc_post->ID).'">'.$sc_post->post_title.'</a>
+			</li></ul>';
 		}
 		echo "</div>";
 
 	}
-
 
 	function wp_cfc_add_dashboard_widgets()
 	{
