@@ -44,4 +44,6 @@ if ( ! class_exists( 'tcr_dashboard_widgets' ) ) :
 
 			}
 		}
+		new tcr_dashboard_widgets;
+
 endif;
